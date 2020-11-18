@@ -13,7 +13,7 @@ const obj = {
     name: "john",
     age: 25,
     isMarried: false
-}
+};
 // Вызов объекта
 console.log(obj.age);
 
@@ -31,3 +31,5 @@ const answers = [];
 answers[0] = prompt('Как ваше имя?', ''); //Вторые кавычки как placeholder и для поддержки IE
 answers[1] = +prompt('Сколько вам лет?', '');
 console.log(answers[1]);
+
+Document.write('Hello World!!');
