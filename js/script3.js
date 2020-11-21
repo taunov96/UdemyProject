@@ -1,4 +1,4 @@
-let numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
+let numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 const personalMovieDB = {
     count: numberOfFilms,
     movies: {},
@@ -7,11 +7,36 @@ const personalMovieDB = {
     privat: false
 };
 
-const a = prompt('Один из последних просмотренных фильмов?', ''),
-      b = prompt('На сколько оцените его?', ''),
-      c = prompt('Один из последних просмотренных фильмов?', ''),
-      d = prompt('На сколько оцените его?', '');
+// let a = prompt('Один из просмотренных фильмов?', ''),
+//     b = prompt('Какую оценку ему поставите?', ''),
+//     c = prompt('Один из просмотренных фильмов?', ''),
+//     d = prompt('Какую оценку ему поставите?', '');
 
-personalMovieDB.movies[a] = b; //Добавляем объект через квадратные скобки во избежания ошибок
-personalMovieDB.movies[c] = d;
+// personalMovieDB.movies[a] = b;
+// personalMovieDB.movies[c] = d;
+
+// console.log(personalMovieDB);
+
+    
+for (let i = 0; i < 2; i++) {
+    let a = prompt('Один из просмотренных фильмов?', ''),
+        b = prompt('Какую оценку ему поставите?', '');
+
+    if (a != '' && b != '' && a != null && b != null && a.length < 50) {
+        personalMovieDB.movies[a] = b;
+    } else {
+        alert('Вводи верные данные и не пытайся жать отмена)')
+        i--; // Чтобы вернуться назад на одну итерацию цикла
+    }
+    
+    
+}
+
+if (personalMovieDB.count < 10) {
+    alert('Просмотрено довольно мало фильмов');
+    } else if (personalMovieDB.count > 9 && personalMovieDB.count < 31) {
+        alert('Вы классический зритель');
+    } else {
+        alert('Вы киноман');
+    }
 console.log(personalMovieDB);
